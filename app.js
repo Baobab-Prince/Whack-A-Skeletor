@@ -7,8 +7,12 @@ let result = 0;
 let hitPosition;
 let currentTime = 60;
 let timerId = null;
-let evilLaugh = new Audio('laugh.mp3');
+let evilLaugh = new Audio('sounds/laugh.mp3');
 evilLaugh.volume = 0.3;
+
+setTimeout(function () {
+  document.getElementById('#price').play();
+}, 60000);
 
 function randomSquare() {
   squares.forEach((square) => {
@@ -36,7 +40,6 @@ function moveMole() {
 }
 
 moveMole();
-
 function countDown() {
   currentTime--;
   timeLeft.textContent = currentTime;
