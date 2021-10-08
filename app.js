@@ -10,9 +10,7 @@ let timerId = null;
 let evilLaugh = new Audio('sounds/laugh.mp3');
 evilLaugh.volume = 0.3;
 
-setTimeout(function () {
-  document.getElementById('#price').play();
-}, 60000);
+
 
 function randomSquare() {
   squares.forEach((square) => {
