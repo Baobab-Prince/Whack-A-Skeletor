@@ -7,10 +7,21 @@ let result = 0;
 let hitPosition;
 let currentTime = 60;
 let timerId = null;
+let myPriceAudio = new Audio('sounds/price.mp3');
+myPriceAudio.loop = true;
+
 let evilLaugh = new Audio('sounds/laugh.mp3');
 evilLaugh.volume = 0.3;
 
-
+myPriceAudio.addEventListener(
+  'ended',
+  function () {
+    this.currentTime = 0;
+    this.play();
+  },
+  false
+);
+myPriceAudio.play();
 
 function randomSquare() {
   squares.forEach((square) => {
