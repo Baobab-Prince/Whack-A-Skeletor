@@ -1,6 +1,20 @@
-* {
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: black;
   color: red;
+}
+
+@font-face {
+  font-family: 'retro.ttf';
+  font-style: normal;
+  src: url('./fonts/retro.ttf') format('truetype');
+}
+
+.name {
+  font-family: 'retro.ttf';
+  font-size: 50px;
 }
 
 .square {
@@ -22,4 +36,22 @@
 .mole {
   background-image: url(skeletor.jpeg);
   background-size: cover;
+}
+
+@media all and (max-width: 600px) {
+  .grid {
+    width: 100%;
+  } /* 600px */
+
+  .square {
+    width: 33.3%;
+  } /* 600px */
+
+  .name {
+    font-size: 30px;
+  }
+
+  .mole {
+    width: 33.3%;
+  }
 }
