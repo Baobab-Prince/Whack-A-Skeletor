@@ -12,6 +12,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      function play() {
+        var audio = document.getElementById('audio');
+        audio.play();
+      }
+    </script>
   </head>
   <body>
     <div class="container-lg">
@@ -24,6 +30,13 @@
       </div>
       <div>
         <h2>Seconds Left: <span id="time-left">60</span></h2>
+      </div>
+
+      <div>
+        <button id="start-button" class="btn btn-danger" onclick="play()">
+          Start Game
+        </button>
+        <audio id="audio" src="./sounds/price.mp3"></audio>
       </div>
 
       <div class="grid">
