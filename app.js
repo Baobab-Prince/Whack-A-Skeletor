@@ -44,6 +44,19 @@ squares.forEach((square) => {
   });
 });
 
+//allow touchscreen users to play the game by clicking on the screen instead of the mouse
+window.addEventListener('touchstart', () => {
+  if (hitPosition) {
+    result++;
+    score.textContent = result;
+    hitPosition = null;
+  }
+});
+
+moveMole();
+let countDownTimerId = setInterval(countDown, 1000);
+
+///////
 function moveMole() {
   timerId = setInterval(randomSquare, 500);
 }
@@ -57,13 +70,8 @@ function countDown() {
     clearInterval(countDownTimerId);
     clearInterval(timerId);
     alert('GAME OVER! Your final score is ' + result);
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
-      evilLaugh.play();
-    }
+    evilLaugh.play();
+    //play laugh on mobile devices
   }
 }
 
