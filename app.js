@@ -11,7 +11,7 @@ let myPriceAudio = new Audio('sounds/price.mp3');
 myPriceAudio.loop = true;
 
 let evilLaugh = new Audio('sounds/laugh.mp3');
-evilLaugh.volume = 0.7;
+evilLaugh.volume = 0.3;
 
 myPriceAudio.addEventListener(
   'ended',
@@ -34,19 +34,16 @@ function randomSquare() {
   hitPosition = randomSquare.id;
 }
 
-//allow touchscreen users to play the game by clicking on the screen instead of the mouse
-window.addEventListener('touchstart', () => {
-  if (hitPosition) {
-    result++;
-    score.textContent = result;
-    hitPosition = null;
-  }
+squares.forEach((square) => {
+  square.addEventListener('mousedown', () => {
+    if (square.id == hitPosition) {
+      result++;
+      score.textContent = result;
+      hitPosition = null;
+    }
+  });
 });
 
-moveMole();
-let countDownTimerId = setInterval(countDown, 1000);
-
-///////
 function moveMole() {
   timerId = setInterval(randomSquare, 500);
 }
@@ -61,7 +58,6 @@ function countDown() {
     clearInterval(timerId);
     alert('GAME OVER! Your final score is ' + result);
     evilLaugh.play();
-    //play laugh on mobile devices
   }
 }
 
