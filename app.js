@@ -34,16 +34,6 @@ function randomSquare() {
   hitPosition = randomSquare.id;
 }
 
-squares.forEach((square) => {
-  square.addEventListener('mousedown', () => {
-    if (square.id == hitPosition) {
-      result++;
-      score.textContent = result;
-      hitPosition = null;
-    }
-  });
-});
-
 //allow touchscreen users to play the game by clicking on the screen instead of the mouse
 window.addEventListener('touchstart', () => {
   if (hitPosition) {
