@@ -58,6 +58,13 @@ function countDown() {
     clearInterval(timerId);
     alert('GAME OVER! Your final score is ' + result);
     evilLaugh.play();
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      evilLaugh.play();
+    }
   }
 }
 
