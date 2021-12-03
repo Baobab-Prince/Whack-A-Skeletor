@@ -11,7 +11,7 @@ let myPriceAudio = new Audio('sounds/price.mp3');
 myPriceAudio.loop = true;
 
 let evilLaugh = new Audio('sounds/laugh.mp3');
-evilLaugh.volume = 0.3;
+evilLaugh.volume = 0.7;
 
 myPriceAudio.addEventListener(
   'ended',
