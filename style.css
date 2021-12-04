@@ -36,7 +36,9 @@ body {
 .mole {
   background-image: url(skeletor.jpeg);
   background-size: cover;
-  
+  width: 200px;
+  height: 200px;
+}
 
 @media all and (max-width: 600px) {
   .grid {
